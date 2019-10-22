@@ -6,3 +6,9 @@
 # with other plant species. We need to ensure that bracken has a significantly
 # distinguishable spectral signature in order to map it around Loch Tay.
 
+# Load libraries ----
+
+library(tidyverse)
+
+# Import data
+
