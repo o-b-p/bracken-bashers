@@ -83,3 +83,8 @@ bracken_red <- bracken[ which(bracken$wavelength > 679
     theme_bw() +
     xlab("\nWavelength (nm)") + ylab("Reflectance\n"))
 
+# Build linear model for bracken red-edge
+
+bracken_lm <- lm(reflectance ~ wavelength, data = bracken)
+# lm(response ~ predictor). So reflectance is response, wavelength is predictor.
+print(bracken_lm)
