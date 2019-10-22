@@ -10,5 +10,7 @@
 
 library(tidyverse)
 
-# Import data
+# Import data ----
+
+project10_spectra <- read.csv("~/bracken-bashers/data/project_10_spectra.csv")
 
