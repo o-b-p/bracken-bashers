@@ -18,7 +18,11 @@ proj10_spectra <- read.csv("~/bracken-bashers/data/project_10_spectra.csv")
 
 proj10_spectra <- proj10_spectra[-1,]
 
-# Convert to long format
+# Convert data to long format ----
 
 proj10_long <- proj10_spectra %>%
   gather(sample, reflectance, 2:133, na.rm = F)
+
+# Rename column ----
+
+proj10_long$wavelength <- proj10_long$X
