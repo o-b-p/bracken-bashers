@@ -7,22 +7,31 @@
 # distinguishable spectral signature in order to map it around Loch Tay.
 
 # Load libraries ----
-
 library(tidyverse)
 
-# Import data ----
 
+# Import data ----
 proj10_spectra <- read.csv("~/bracken-bashers/data/project_10_spectra.csv")
+class_spectra <- read.csv("~/bracken-bashers/data/class_spectra.csv")
+
 
 # Remove first row ----
-
 proj10_spectra <- proj10_spectra[-1,]
 
-# Convert data to long format ----
 
+# Convert data to long format ----
 proj10_long <- proj10_spectra %>%
   gather(sample, reflectance, 2:133, na.rm = F)
 
-# Rename column ----
 
+# Rename columns ----
 proj10_long$wavelength <- proj10_long$X
+class_spectra$wavelength <- class_spectra$Wavelength..nm.
+
+
+# Subset only bracken observations by string-matching ----
+bracken <- proj10_long[grep("Br", proj10_long$sample), ]
+
+
+
+
