@@ -8,7 +8,7 @@
 
 # Load libraries ----
 library(tidyverse)
-
+library(ggspectra)
 
 # Import data ----
 proj10_spectra <- read.csv("~/bracken-bashers/data/project_10_spectra.csv")
@@ -33,5 +33,53 @@ class_spectra$wavelength <- class_spectra$Wavelength..nm.
 bracken <- proj10_long[grep("Br", proj10_long$sample), ]
 
 
+# Create an ID column for bracken samples ----
 
+# View vector types
+str(bracken)
+# Convert character to factor (for column "sample")
+bracken$sample <- as.factor(bracken$sample)
+# Create new column "id", with unique sample number.
+bracken$id <- as.numeric(bracken$sample)
+
+
+# Convert reflectance from character to numeric ----
+
+bracken$reflectance <- as.factor(bracken$reflectance)
+bracken$reflectance <- as.numeric(bracken$reflectance)
+
+# Group by id
+
+bracken_mean <- bracken %>%
+  group_by(wavelength) %>%
+  dplyr::summarise(Mean = mean(reflectance)) %>%
+  ungroup()
+
+# Plot average bracken spectrogram (hyperspectral)----
+
+(ggplot(bracken_mean, aes(x = wavelength, y = Mean, group = 1)) +
+  geom_line() +
+   #geom_point() +
+    xlab("\nWavelength") + ylab("Mean reflectance (nm)\n"))
+
+(ggplot(bracken, aes(x = wavelength, y = reflectance, group = 1)) +
+    #geom_line() +
+    geom_point(colour="blue", size = 0.5) +
+    geom_smooth(method=lm) +
+    xlab("\nWavelength (nm)") + ylab("Reflectance"))
+
+# Select red-edge only ----
+
+bracken$wavelength <- as.numeric(bracken$wavelength) # Convert to numeric
+
+bracken_red <- bracken[ which(bracken$wavelength > 679 
+                              & bracken$wavelength < 731), ]
+
+# Plot bracken red-edge with linear regression
+
+(ggplot(bracken_red, aes(x = wavelength, y = reflectance, group = 1)) +
+    geom_point(colour="red", size = 0.5) +
+    geom_smooth(method=lm) +
+    theme_bw() +
+    xlab("\nWavelength (nm)") + ylab("Reflectance\n"))
 
