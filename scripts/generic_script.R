@@ -1,5 +1,5 @@
 library(tidyverse)
-
+library(gridExtra)
 # Import data ----
 proj10_spectra <- read.csv("~/bracken-bashers/data/project_10_spectra.csv")
 
@@ -82,55 +82,61 @@ summary(lm_moss)
 # Make plots ----
 
 # Sitka spruce
-(ggplot(re_sitka, aes(x = wavelength, y = reflectance, group = 1)) +
+p_sitka <- ggplot(re_sitka, aes(x = wavelength, y = reflectance, group = 1)) +
    geom_point(colour="red", size = 0.5) +
    geom_smooth(method=lm) +
    theme_bw() +
-   ggtitle("Red-edge reflectance of sitka spruce samples (680-780 nm)\n") +
+   ggtitle("Sitka spruce\n") +
    theme(plot.title = element_text(face = "bold")) +
-   xlab("\nWavelength (nm)") + ylab("Reflectance\n"))
+   xlab("\nWavelength (nm)") + ylab("Reflectance\n")
 
 # Pasture grass
-(ggplot(re_pasture, aes(x = wavelength, y = reflectance, group = 1)) +
+p_pasture <- ggplot(re_pasture, aes(x = wavelength, y = reflectance, group = 1)) +
     geom_point(colour="red", size = 0.5) +
     geom_smooth(method=lm) +
     theme_bw() +
-    ggtitle("Red-edge reflectance of pasture grass samples (680-780 nm)\n") +
+    ggtitle("Pasture grass\n") +
     theme(plot.title = element_text(face = "bold")) +
-    xlab("\nWavelength (nm)") + ylab("Reflectance\n"))
+    xlab("\nWavelength (nm)") + ylab("Reflectance\n")
 
 # Grassland
-(ggplot(re_grass, aes(x = wavelength, y = reflectance, group = 1)) +
+p_grass <- ggplot(re_grass, aes(x = wavelength, y = reflectance, group = 1)) +
     geom_point(colour="red", size = 0.5) +
     geom_smooth(method=lm) +
     theme_bw() +
-    ggtitle("Red-edge reflectance of grassland samples (680-780 nm)\n") +
+    ggtitle("Grassland\n") +
     theme(plot.title = element_text(face = "bold")) +
-    xlab("\nWavelength (nm)") + ylab("Reflectance\n"))
+    xlab("\nWavelength (nm)") + ylab("Reflectance\n")
 
 # Rhodedendron
-(ggplot(re_rho, aes(x = wavelength, y = reflectance, group = 1)) +
+p_rho <- ggplot(re_rho, aes(x = wavelength, y = reflectance, group = 1)) +
     geom_point(colour="red", size = 0.5) +
     geom_smooth(method=lm) +
     theme_bw() +
-    ggtitle("Red-edge reflectance of rhodedendron samples (680-780 nm)\n") +
+    ggtitle("Rhodedendron\n") +
     theme(plot.title = element_text(face = "bold")) +
-    xlab("\nWavelength (nm)") + ylab("Reflectance\n"))
+    xlab("\nWavelength (nm)") + ylab("Reflectance\n")
 
 # Bracken
-(ggplot(re_br, aes(x = wavelength, y = reflectance, group = 1)) +
+p_br <- ggplot(re_br, aes(x = wavelength, y = reflectance, group = 1)) +
     geom_point(colour="red", size = 0.5) +
     geom_smooth(method=lm) +
     theme_bw() +
-    ggtitle("Red-edge reflectance of bracken samples (680-780 nm)\n") +
+    ggtitle("Bracken\n") +
     theme(plot.title = element_text(face = "bold")) +
-    xlab("\nWavelength (nm)") + ylab("Reflectance\n"))
+    xlab("\nWavelength (nm)") + ylab("Reflectance\n")
 
 # Moss
-(ggplot(re_moss, aes(x = wavelength, y = reflectance, group = 1)) +
+p_moss <- ggplot(re_moss, aes(x = wavelength, y = reflectance, group = 1)) +
    geom_point(colour="red", size = 0.5) +
    geom_smooth(method=lm) +
    theme_bw() +
-   ggtitle("Red-edge reflectance of moss samples (680-780 nm)\n") +
+   ggtitle("Moss\n") +
    theme(plot.title = element_text(face = "bold")) +
-   xlab("\nWavelength (nm)") + ylab("Reflectance\n"))
+   xlab("\nWavelength (nm)") + ylab("Reflectance\n")
+
+
+
+# Combine plots into one graphic ----
+
+re_combined <- grid.arrange(p_sitka, p_grass, p_pasture, p_rho, p_br, p_moss, nrow = 2)
