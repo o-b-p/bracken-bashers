@@ -81,6 +81,8 @@ bracken_red <- bracken[ which(bracken$wavelength > 679
     geom_point(colour="red", size = 0.5) +
     geom_smooth(method=lm) +
     theme_bw() +
+    ggtitle("Red-edge reflectance of bracken samples (680-780 nm)\n") +
+    theme(plot.title = element_text(face = "bold")) +
     xlab("\nWavelength (nm)") + ylab("Reflectance\n"))
 
 # Build linear model for bracken red-edge ----
