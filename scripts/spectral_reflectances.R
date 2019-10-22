@@ -87,14 +87,14 @@ bracken_red <- bracken[ which(bracken$wavelength > 679
 
 # Build linear model for bracken red-edge ----
 
-bracken_lm <- lm(reflectance ~ wavelength, data = bracken)
+bracken_lm <- lm(reflectance ~ wavelength, data = bracken_red)
 # lm(response ~ predictor). So reflectance is response, wavelength is predictor.
 print(bracken_lm)
 
 # Therefore, our linear model is:
-# reflectance = 21233.834 + (-4.797 * wavelength)
+# reflectance = 35621.76 + (-21.59 * wavelength)
 
-# The gradient of the line is -4.797.
+# The gradient of the line is -21.59.
 
 
 # Check for statistical significance ----
