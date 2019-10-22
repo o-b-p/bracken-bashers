@@ -47,6 +47,7 @@ bracken$id <- as.numeric(bracken$sample)
 
 bracken$reflectance <- as.factor(bracken$reflectance)
 bracken$reflectance <- as.numeric(bracken$reflectance)
+bracken$wavelength <- as.numeric(bracken$wavelength)
 
 # Group by id
 
@@ -65,17 +66,16 @@ bracken_mean <- bracken %>%
 (ggplot(bracken, aes(x = wavelength, y = reflectance, group = 1)) +
     #geom_line() +
     geom_point(colour="blue", size = 0.5) +
-    geom_smooth(method=lm) +
+    #geom_smooth(method=lm) +
     xlab("\nWavelength (nm)") + ylab("Reflectance"))
 
 # Select red-edge only ----
 
-bracken$wavelength <- as.numeric(bracken$wavelength) # Convert to numeric
 
 bracken_red <- bracken[ which(bracken$wavelength > 679 
-                              & bracken$wavelength < 731), ]
+                              & bracken$wavelength < 781), ]
 
-# Plot bracken red-edge with linear regression
+# Plot bracken red-edge with linear regression ----
 
 (ggplot(bracken_red, aes(x = wavelength, y = reflectance, group = 1)) +
     geom_point(colour="red", size = 0.5) +
@@ -83,8 +83,21 @@ bracken_red <- bracken[ which(bracken$wavelength > 679
     theme_bw() +
     xlab("\nWavelength (nm)") + ylab("Reflectance\n"))
 
-# Build linear model for bracken red-edge
+# Build linear model for bracken red-edge ----
 
 bracken_lm <- lm(reflectance ~ wavelength, data = bracken)
 # lm(response ~ predictor). So reflectance is response, wavelength is predictor.
 print(bracken_lm)
+
+# Therefore, our linear model is:
+# reflectance = 21233.834 + (-4.797 * wavelength)
+
+# The gradient of the line is -4.797.
+
+
+# Check for statistical significance ----
+
+summary(bracken_lm)
+# p-value < 2.2e-16
+# Therefore our model is statistically significant, as it is well below the 
+# theshold of p < 0.05.
