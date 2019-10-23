@@ -152,9 +152,10 @@ mean_decid <- decid %>%
   dplyr::summarise(mean_deciduous_reflectance = mean(mean_reflectance)) %>%
   ungroup()
 
-
+# Add mean deciduous to master df
 merged <- merge(mean_decid, merged, by = "wavelength")
 
+# Save master df
 write.csv(merged, file = "~/bracken-bashers/other_outputs/spectral_library.csv")
 
 
