@@ -1,0 +1,59 @@
+ID,Recorder ID,Coordinates,UTM,Centrepoint?,Vegetation type,Specimens?,Comments
+1,E1,30V0421857 ,6259580,,br,br,
+2,E2,30V0421946 ,6259590,,sitka plantation,,
+3,E3,30V0421990 ,6259590,,sitka plantation,,
+4,E4,30V0421996 ,6259591,,br,,
+5,93,30V0422157 ,6259836,,mixed deciduous forest,,mostly birch
+6,E5,0422223,6259852,,mixed deciduous forest,,mostly birch
+7,E6,0422890,6260170,,birch,"birch, moss",moss understorey
+8,E7,0422933,6260162,y,br,,narrow patch
+9,E8,0422990,6260144,y,alder forest,,
+10,E9,0422975,6260103,,br,,tall
+11,E10,,,,young sitka plantation,young sitka,N edge
+12,E11,0423140,6260232,,young deciduous mixed grassland,grass,sapling plantation
+13,E12,0423115,6260218,,young deciduous mixed grassland,,sapling plantation
+14,E13,0423157,6260130,,open grassland,,grazing exclusion fence
+15,E14,0423198,6260123,,open grassland,,grazing exclusion fence
+16,E15,0423200,6260064,,open grassland,,"fallow ploughed field, soil exposed"
+17,E16,0423246,6260015,,open grassland,grass,"fallow ploughed field, soil exposed"
+18,E17,0423272,6259986,,open grassland,,"fallow ploughed field, soil exposed"
+19,E18,0423496,6260442,,mixed deciduous forest,,"N edge, fenced"
+20,E19,0423532,6260482,,mixed deciduous forest,,"N edge, fenced"
+21,O1,30V0421871,6259585,,open grassland,Br,Br
+22,O2,30V0421965,6259585,,Sitka forest,Sitka,Sitka
+23,O3,30V0421966,0421966,,Sitka forest,Sitka,br
+24,O4,30V0421954,6259623,,Bracken,rowan,
+25,O5,30V0422045,6259770,y,DF,br,
+26,O6,30V0422052,6259790,y,Br,alder,
+27,O7,30V0422933,6260140,,Alder forest,alder,
+28,O8,30V0422906,6260132,y,Alder forest,alder ,
+29,O9,30V0422941,6260098,y,Br,br,
+30,O10,30V0423088,6260190,,young deciduous forest,grass,
+31,O11,30V0423055,6260219,,young deciduous forest,,
+32,O12,30V0423055,6260219,y,open grassland,grass,
+33,O13,30V0423269,6260049,,open grassland,grass,
+34,O14,30V0423320,6260286,,open bracken,br,
+35,B1,30V0421880,6259595,y,Bracken,Bracken ,"The center of the most Easternt hird sampled. Only species bracken, light winds, slight hill, no rain . Thick bracken covering ground . "
+36,B2 ,30V0421895,6259586,,Bracken,,
+37,B3 ,30V0421898,6259563,,Bracken,,
+38,B4,30V0421886,6259547,,Bracken,,
+39,B5,30V0421935,6259597,,Bracken,,
+40,B6,30V0422036,6259753,y,Birch/Alder/Ash mixed ,Ash,"Moderately thick,deciduous woodland. Nest to loch . Downward slope . More alder and birch, less ash"
+41,B7,0421983,6259726,,,,
+42,B8,30V0422849,6260137,,"Alder, birch, mixed deciduous wood",,"Mixed alder and birch with ground flora of grass and bracken . Hilly, sloped and dry . "
+43,B9,30V6422804,6260140,,,,"Predominantly birch, dispersed oak "
+44,B10,30V0422784,6260121,,Bracken,,Large clearing in mived decid woodland . Tall bracken surrounded by birch and alder . 
+45,B11,30V0422900,6260080,,Bracken,,Long bracken strip west to east paralel to young spruce forrest . 
+46,B12,30V0422946,6260089,,Bracken,,"Same strip, further East"
+47,B13,30V0423238,6260283,,Grassland and MDW saplings ,,Oak saplings 1.5m apart in semi clear plastic tubes . 
+48,B14,30V0423254,6260289,,,,"Further East, more birch saplings . "
+49,B15,30V0423205,6260271,,,,
+50,B16,30V0423181,6260156,,Unmanaged Grassland,,"Unmanaged grassland, no grazing,Tall yellow grass and small shrubs and grasses . "
+51,B17,30V0423215,6260155,,,,"More uphill, near barn, scattered mature oaks . "
+52,B18,30V0423278,6260123,,Partially managed Grassland ,,"Furrowed land, upturned soil and herbs . Ruches common . Vertical streams beneath veg. Furrows perpendicular to loch . "
+53,B19,30V0423278,6260123,y,,soil,
+54,B20,,,,,,
+55,B21,30V0423338,6260279,,Bracken,,"Very open, Bracken only, hillside North facing "
+56,B22,30V0423351,6260279,,,,
+57,B23,30V0423355,6260271,,Grassland ,,"Uphill,long dead blades . "
+58,B24,30V0420381,6258550,,Bracken,,Column of open bracken .  Lined by Spruce and Birch . 
