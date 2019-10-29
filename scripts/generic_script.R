@@ -1,7 +1,7 @@
 library(tidyverse)
 library(gridExtra)
 # Import data ----
-proj10_spectra <- read.csv("~/bracken-bashers/data/project_10_spectra.csv")
+proj10_spectra <- read.csv("data/project_10_spectra.csv")
 
 
 # Remove first row ----
