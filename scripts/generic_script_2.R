@@ -14,6 +14,7 @@ proj10_long <- proj10_spectra %>%
          sample = as.factor(sample),
          wavelength = as.numeric(as.character(X))) %>%
   select(-X)
+write.csv(proj10_long, file = "data/Long_format.csv")
 
 # Select red-edge only ----
 rededge <- filter(proj10_long, wavelength > 679 & wavelength < 781)
