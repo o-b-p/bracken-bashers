@@ -1,9 +1,9 @@
+# This script deals with the project 10 data samples that we collected in the field then scanned their spectral reflectances across the wavelengths 
+
 library(tidyverse)
 library(gridExtra)
 # Import data ----
-proj10_spectra <- read.csv("~/bracken-bashers/data/project_10_spectra.csv")
-
-
+proj10_spectra <- read.csv("~bracken-bashers/data/project_10_spectra.csv")
 
 # Remove first row ----
 proj10_spectra <- proj10_spectra[-1,]
@@ -23,7 +23,7 @@ proj10_long <- proj10_spectra %>%
 # Create species-specific dataframes -------------------------------------------
 
 # Non-broadleaf
-sitka <- proj10_long[grep("Sika", proj10_long$sample), ] %>%
+sitka <- proj10_long[grep("Sika", proj10_long$sample), ] %>% 
   group_by(wavelength) %>%
   dplyr::summarise(sitka_mean_reflectance = mean(reflectance)) %>%
   ungroup() 
